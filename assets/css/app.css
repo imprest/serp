@@ -1,0 +1,12 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "./phoenix.css";
+
+@layer components {
+  .btn { @apply inline-block font-semibold py-2 px-4 }
+}
+
+@layer utilities {
+  .is-primary { @apply bg-secondary-700 text-white }
+}
