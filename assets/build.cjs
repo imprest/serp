@@ -11,7 +11,7 @@ const loader = {
 
 const plugins = [
   // Add and configure plugins here
-  sveltePlugin({compileOptions: {css: true}})
+  sveltePlugin()
 ]
 
 let opts = {
