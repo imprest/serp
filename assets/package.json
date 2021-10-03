@@ -3,9 +3,9 @@
   "type": "module",
   "scripts": {
     "build": "node build.cjs --deploy",
-    "build:css": "NODE_ENV=production tailwindcss -c tailwind.config.cjs --postcss -i ./css/app.css -o ../priv/static/assets/app.css",
+    "build:css": "NODE_ENV=production tailwindcss -c tailwind.config.cjs --postcss -i ./css/app.css -o ../priv/static/assets/tailwind.css",
     "dev": "node build.cjs --watch",
-    "watch:css": "NODE_ENV=development tailwindcss -c tailwind.config.cjs --postcss -i ./css/app.css -o ../priv/static/assets/app.css -w"
+    "watch:css": "NODE_ENV=development tailwindcss -c tailwind.config.cjs --postcss -i ./css/app.css -o ../priv/static/assets/tailwind.css -w"
   },
   "dependencies": {
     "phoenix": "file:../deps/phoenix",

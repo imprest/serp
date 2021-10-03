@@ -12,4 +12,4 @@
 
 
 <h1 class="text-5xl mx-auto">Hi {name}</h1>
-<button class="is-primary" on:click={get_data}>Change Name</button>
+<button class="btn is-primary" on:click={get_data}>Change Name</button>

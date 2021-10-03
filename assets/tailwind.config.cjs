@@ -13,9 +13,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        transparent: 'transparent',
+        white: '#fff',
         primary: colors.red,
         secondary: colors.indigo,
-        warning: colors.yellow
+        warning: colors.yellow,
+        gray: colors.gray
       }
     },
   },
