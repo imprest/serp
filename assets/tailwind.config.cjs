@@ -6,7 +6,7 @@ module.exports = {
       '../**/live/*.ex',
       '../**/live/*.html.heex',
       '../**/views/*.ex',
-      '../**/templates/layout/*.html.heex',
+      '../**/templates/**/*.html.heex',
       'js/**/*.{html,js,svelte,ts}'
   ],
   darkMode: false, // or 'media' or 'class'
