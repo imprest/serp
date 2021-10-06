@@ -50,22 +50,3 @@ if (watch) {
     process.stdin.resume()
   })
 }
-
-/* import esbuild from 'esbuild';
-import sveltePlugin from 'esbuild-svelte';
-
-esbuild.build({
-  entryPoints: ["js/app.js"],
-  bundle: true,
-  logLevel: 'info',
-  format: 'esm',
-  outfile: '../priv/static/assets/app.js',
-  plugins: [sveltePlugin()],
-  watch: true,
-  sourcemap: 'inline'
-}).then((result) => {
-  // This is important so that esbuild's watcher stops
-  // when beam or phx server is closed via STDIN
-  process.stdin.pipe(process.stdout)
-  process.stdin.on('end', () => { result.stop() })
-}).catch(() => process.exit(1)); */
