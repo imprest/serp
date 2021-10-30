@@ -4,10 +4,34 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <%= if @manifest do %>
+      <link rel="manifest" href="manifests/websockets.json">
+    <% end %>
     <%= csrf_meta_tag() %>
     <%= live_title_tag assigns[:page_title] || "Serp", suffix: " · Phoenix Framework" %>
     <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/assets/tailwind.css")}/>
     <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/assets/app.css")}/>
+    <link phx-track-static rel="manifest" href={Routes.static_path(@conn, "/manifests/websockets.json")}/>
+    <script>
+    window.addEventListener('load', () => {
+      registerSW();
+    });
+
+    // Register the Service Worker
+    async function registerSW() {
+      if ('serviceWorker' in navigator) {
+        try {
+          await navigator
+                .serviceWorker
+                .register('/manifests/serviceworker.js');
+        }
+        catch (e) {
+          console.log('SW registration failed');
+        }
+      }
+    }
+ </script>
+    <script defer phx-track-static type="module" src={Routes.static_path(@conn, "/manifests/serviceworker.js")}></script>
     <script defer phx-track-static type="module" src={Routes.static_path(@conn, "/assets/app.js")}></script>
   </head>
   <body>

@@ -11,10 +11,15 @@ defmodule SerpWeb.Router do
     plug :protect_from_forgery
     plug :put_secure_browser_headers
     plug :fetch_current_user
+    plug :default_assigns
   end
 
   pipeline :api do
     plug :accepts, ["json"]
+  end
+
+  def default_assigns(conn, _opts) do
+    conn |> assign(:manifest, nil)
   end
 
   # Other scopes may use custom stacks.
